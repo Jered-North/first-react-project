@@ -40,6 +40,12 @@ class Board extends React.Component {
 		})
 	}
 
+	resetBoard() {
+		this.setState ({
+			squares: Array(100).fill(null),
+		})
+	}
+
   	// renderSquare(i) {
   	//   return <Square value={i} />;
   	// }
@@ -66,6 +72,10 @@ class Board extends React.Component {
     	<button className="change-button" 
     			onClick={() => this.changeBoardColor()}>
     	{this.state.isChanged ? "Change" : "Revert"} Board Color
+    	</button>
+    	<button className="reset-button" 
+    			onClick={() => this.resetBoard()}>
+    	Reset Board
     	</button>
         <div className="board-row">
           {this.renderRow(0)}

@@ -19,6 +19,11 @@ ol, ul {
 
 .change-button {
 	margin-bottom: 20px;
+	margin-right: 10px;
+}
+
+.reset-button {
+	margin-bottom: 20px;
 }
 
 .square {
