@@ -44,10 +44,6 @@ class Board extends React.Component {
 			squares: Array(100).fill(null),
 		})
 	}
-
-  	// renderSquare(i) {
-  	//   return <Square value={i} />;
-  	// }
 	
   	renderRow(start) {
     let rowArr = [];
