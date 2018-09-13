@@ -27,7 +27,6 @@ class Board extends React.Component {
 			return;
 		}
 		squares[i] = i;
-		this.state.id = i;
 		this.setState({
 			squares: squares,
 		});
@@ -77,6 +76,7 @@ class Board extends React.Component {
     			onClick={() => this.resetBoard()}>
     	Reset Board
     	</button>
+    	<p className="description">Click on the squares to get a number</p>
         <div className="board-row">
           {this.renderRow(0)}
         </div>
