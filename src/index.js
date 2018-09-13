@@ -16,6 +16,7 @@ class Board extends React.Component {
 		super(props);
 		this.state = {
 			squares: Array(100).fill(null),
+			isChanged: true,
 			isWhite: true,
 		};
 	}
@@ -26,10 +27,17 @@ class Board extends React.Component {
 			return;
 		}
 		squares[i] = i;
+		this.state.id = i;
 		this.setState({
 			squares: squares,
-			isWhite: !this.state.isWhite,
 		});
+	}
+
+	changeBoardColor() {
+		this.setState({
+			isWhite: !this.state.isWhite,
+			isChanged: !this.state.isChanged,
+		})
 	}
 
   	// renderSquare(i) {
@@ -42,8 +50,8 @@ class Board extends React.Component {
     for (let i = start; i < start + 10; i++) {
       rowArr.push(
       	<Square 
-      		myClass={this.state.isWhite ? "square" : "redSquare"}
-      		value={this.state.squares[i]} 
+      		myClass={this.state.isWhite ? "square" : "blueSquare"}
+      		value={this.state.squares[i]}
       		onClick={() => this.handleClick(i)} 
       	/>)
       
@@ -55,6 +63,10 @@ class Board extends React.Component {
   render() {
     return (
       <div>
+    	<button className="change-button" 
+    			onClick={() => this.changeBoardColor()}>
+    	{this.state.isChanged ? "Change" : "Revert"} Board Color
+    	</button>
         <div className="board-row">
           {this.renderRow(0)}
         </div>

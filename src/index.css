@@ -17,6 +17,10 @@ ol, ul {
   margin-bottom: 10px;
 }
 
+.change-button {
+	margin-bottom: 20px;
+}
+
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -32,8 +36,8 @@ ol, ul {
   width: 34px;
 }
 
-.redSquare {
-  background: red;
+.blueSquare {
+  background: cyan;
   border: 1px solid #999;
   float: left;
   font-size: 24px;
@@ -52,7 +56,7 @@ ol, ul {
   outline: none;
 }
 
-.redSquare:focus {
+.blueSquare:focus {
   outline: none;
 }
 
